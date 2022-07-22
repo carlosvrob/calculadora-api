@@ -1,0 +1,21 @@
+package com.proyectoscvr.calculator.operations;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class SubstractionOperationTest {
+
+	@Autowired
+	private SubstractionOperation substractionOperation;
+	
+	@Test
+	void testSubstractionExecuteMethod() {
+		Double res = substractionOperation.execute(3.0, 5.0);
+		
+		assertEquals(-2.0, res);
+	}
+}
