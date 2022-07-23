@@ -1,5 +1,7 @@
 package com.proyectoscvr.calculator.service;
 
+import java.math.BigDecimal;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,9 +15,9 @@ public class CalculatorService implements ICalculatorService{
 	private OperationFactory operationFactory;
 	
 	@Override
-	public Double calculate(OperationDTO operation) {
+	public BigDecimal calculate(OperationDTO operation) {
 
-		return operationFactory.getOperation(operation.getTypeOperation()).execute(operation.getOperandA(), operation.getOperandB());
+		return operationFactory.getOperation(operation.getTypeOperation()).execute(operation.getFirstOperand(), operation.getSecondOperand());
 
 	}
 

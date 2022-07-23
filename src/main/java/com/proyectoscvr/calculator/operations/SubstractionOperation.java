@@ -1,14 +1,16 @@
 package com.proyectoscvr.calculator.operations;
 
+import java.math.BigDecimal;
+
 import org.springframework.stereotype.Component;
 
 @Component
 public class SubstractionOperation implements IOperation {
 
 	@Override
-	public Double execute(Double operandA, Double operandB) {
+	public BigDecimal execute(BigDecimal firstOperand, BigDecimal secondOperand) {
 
-		return operandA - operandB ;
+		return firstOperand.subtract(secondOperand);
 	}
 
 }

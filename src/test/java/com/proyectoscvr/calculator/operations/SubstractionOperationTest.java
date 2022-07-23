@@ -2,6 +2,8 @@ package com.proyectoscvr.calculator.operations;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.math.BigDecimal;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -14,8 +16,8 @@ class SubstractionOperationTest {
 	
 	@Test
 	void testSubstractionExecuteMethod() {
-		Double res = substractionOperation.execute(3.0, 5.0);
+		BigDecimal res = substractionOperation.execute(BigDecimal.valueOf(3.0), BigDecimal.valueOf(5.0));
 		
-		assertEquals(-2.0, res);
+		assertEquals(BigDecimal.valueOf(-2.0), res);
 	}
 }

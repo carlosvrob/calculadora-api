@@ -1,7 +1,9 @@
 package com.proyectoscvr.calculator.operations;
 
+import java.math.BigDecimal;
+
 public interface IOperation {
 
-	public Double execute(Double operandA, Double operandB);
+	public BigDecimal execute(BigDecimal operandA, BigDecimal operandB);
 
 }
