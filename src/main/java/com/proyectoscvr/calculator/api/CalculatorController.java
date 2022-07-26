@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.proyectoscvr.calculator.api.dto.ErrorDTO;
 import com.proyectoscvr.calculator.api.dto.OperationDTO;
+import com.proyectoscvr.calculator.exceptions.InvalidOperationException;
 import com.proyectoscvr.calculator.service.ICalculatorService;
 import com.proyectoscvr.calculator.tracer.TracerCalc;
 
@@ -43,15 +44,14 @@ public class CalculatorController {
 	// Metodo encargado de procesa solicitudes POST en "/api/calculate"
 	@Operation(summary = "Addition or substraction of the two input values")
 	@ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Result", content = { @Content(mediaType = "application/json", 
-            	      schema = @Schema(implementation = BigDecimal.class)) }),
+            @ApiResponse(responseCode = "200", description = "OK", content = @Content(mediaType = "application/json", schema = @Schema(implementation = BigDecimal.class))),
             @ApiResponse(responseCode = "400", description = "Bad Request", content = { @Content(mediaType = "application/json", 
   	      schema = @Schema(implementation = ErrorDTO.class)) }),
             @ApiResponse(responseCode = "500", description = "Internal Error", content = { @Content(mediaType = "application/json", 
   	      schema = @Schema(implementation = ErrorDTO.class)) })
 	})    
 	@PostMapping(value = "/api/calculate", produces = { "application/json" })
-    public  ResponseEntity<BigDecimal> calculate(@Valid @RequestBody OperationDTO operation) {
+    public  ResponseEntity<BigDecimal> calculate(@Valid @RequestBody OperationDTO operation) throws InvalidOperationException {
 		
 		BigDecimal result = calculatorService.calculate(operation);
 		

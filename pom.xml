@@ -46,7 +46,7 @@
 			<artifactId>tracer</artifactId>
 			<version>1.0.0</version>
 		</dependency>
-		
+
 		<!-- Documentacion API (estandar OpenAPI) -->
 		<dependency>
 			<groupId>org.springdoc</groupId>
@@ -68,6 +68,25 @@
 						</exclude>
 					</excludes>
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-install-plugin</artifactId>
+				<executions>
+					<execution>
+						<phase>validate</phase>
+						<goals>
+							<goal>install-file</goal>
+						</goals>
+						<configuration>
+							<groupId>io.corp</groupId>
+							<artifactId>calculator</artifactId>
+							<version>1.0.0</version>
+							<packaging>jar</packaging>
+							<file>${basedir}/lib/tracer-1.0.0.jar</file>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>

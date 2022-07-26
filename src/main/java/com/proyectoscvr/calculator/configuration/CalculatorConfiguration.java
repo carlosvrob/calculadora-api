@@ -20,7 +20,7 @@ public class CalculatorConfiguration {
                         .contact(new Contact()
                                 .name("Carlos Villar")
                                 .email("carlosvrob91@gmail.com")
-                                .url("http://localhost"))
-                        .version("1.0"));
+                                .url(""))
+                        .version("1.0.0"));
     }
 }
