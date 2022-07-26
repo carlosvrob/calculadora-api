@@ -18,6 +18,13 @@ class SubstractionOperationTest {
 	void testSubstractionExecuteMethod() {
 		BigDecimal res = substractionOperation.execute(BigDecimal.valueOf(3.0), BigDecimal.valueOf(5.0));
 		
-		assertEquals(BigDecimal.valueOf(-2.0), res);
+		assertEquals(BigDecimal.valueOf(3.0).subtract(BigDecimal.valueOf(5.0)), res);
+	}
+	
+	@Test
+	void testSubstractionOperationIdMethod() {
+		String id = substractionOperation.getOperationId();
+		
+		assertEquals("SUB", id);
 	}
 }

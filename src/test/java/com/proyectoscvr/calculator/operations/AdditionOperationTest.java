@@ -18,6 +18,13 @@ class AdditionOperationTest {
 	void testAdditionExecuteMethod() {
 		BigDecimal res = additionOperation.execute(BigDecimal.valueOf(3.0), BigDecimal.valueOf(5.0));
 		
-		assertEquals(BigDecimal.valueOf(8.0), res);
+		assertEquals(BigDecimal.valueOf(3.0).add(BigDecimal.valueOf(5.0)), res);
+	}
+	
+	@Test
+	void testAdditionOperationIdMethod() {
+		String id = additionOperation.getOperationId();
+		
+		assertEquals("ADD", id);
 	}
 }
