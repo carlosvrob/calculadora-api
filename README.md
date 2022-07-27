@@ -67,6 +67,8 @@ Tras pulsar el botón "SEND" se lanza la petición y en la parte inferior de la 
 #### Error por Operación incorrecta/No implementada:
 ![image](https://user-images.githubusercontent.com/109756222/181237695-f27bbf91-e0df-4d20-969b-4e9930b5b064.png)
 
+Además, una vez arrancada la aplicación, puede consultarse toda la información de la API (Especificación OpenAPI 3.0) en la siguiente URL: http://localhost:8080/swagger-ui.html
+
 
 
 
