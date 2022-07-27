@@ -2,9 +2,11 @@ package com.proyectoscvr.calculator.api.dto;
 
 import java.time.LocalDateTime;
 import io.swagger.v3.oas.annotations.media.Schema;
-import lombok.Value;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 
-@Value
+@AllArgsConstructor
+@Getter
 public class ErrorDTO {
 
     @Schema(description = "Timestamp when error occurred", example = "2022-07-24T19:30:15.350742")

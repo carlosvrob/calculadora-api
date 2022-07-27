@@ -2,23 +2,16 @@ package com.proyectoscvr.calculator.service;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.hamcrest.Matchers;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
-import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
 
 import com.proyectoscvr.calculator.api.dto.OperationDTO;
 import com.proyectoscvr.calculator.exceptions.InvalidOperationException;
@@ -32,10 +25,6 @@ class CalculatorServiceTest {
 
 	@Autowired
     private CalculatorService calculatorService;
-	
-	private IOperation operation;
-	
-	private BigDecimal result = new BigDecimal(3.0);
 	
 	private OperationDTO operationDTO;
 	
@@ -83,6 +72,6 @@ class CalculatorServiceTest {
 		
 		String messageException = exception.getMessage();
 		
-	    assertTrue(messageException.equals(expectedMessageException));		
+	    assertEquals(messageException, expectedMessageException);		
 	}
 }

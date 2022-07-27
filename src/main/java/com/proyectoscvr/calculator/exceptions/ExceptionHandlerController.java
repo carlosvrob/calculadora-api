@@ -47,7 +47,7 @@ public class ExceptionHandlerController{
 	// Se lanza cuando el tipo de operacion es desconocido (Operacion no valida/no implementada).
 	@ExceptionHandler(InvalidOperationException.class)
 	public ResponseEntity<ErrorDTO> handleInvalidOperationException(InvalidOperationException e, HttpServletRequest request) {
-		ErrorDTO result = new ErrorDTO(LocalDateTime.now(), HttpStatus.NOT_FOUND.value(), e.getLocalizedMessage(), request.getRequestURI());
+		ErrorDTO result = new ErrorDTO(LocalDateTime.now(), HttpStatus.NOT_FOUND.value(), e.getMessage(), request.getRequestURI());
 		
 		return new ResponseEntity<>(result, HttpStatus.NOT_FOUND);
 	}
