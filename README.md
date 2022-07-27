@@ -23,7 +23,11 @@ Se ha utilizado **io.corp.tracer** para "tracear" las ejecuciones de nuestra apl
 
 ### Funcionalidades implementadas
 Se han implementado las operaciones de SUMA, RESTA y MULTIPLICACIÓN pero el servicio se ha desarrollado de tal modo que puedan añadirse nuevas operaciones sin que haya que modificar el código ya existente (OCP).
+
+
 Se ha implementado un controlador, cuya labor es la de hacer de Handler de excepciones propio de modo que el manejo de excepciones sea centralizado por este controlador. Además se han creado excepciones propias de la aplicación.
+
+
 Por último, por cada ejecución se consume la TracerAPI (Librería externa) que registra los campos de entrada y el resultado de las operaciones.
 
 ### Procedimientos de compilación y ejecución
