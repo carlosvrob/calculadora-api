@@ -43,7 +43,7 @@
 		<!-- Libreria TracerAPI -->
 		<dependency>
 			<groupId>io.corp</groupId>
-			<artifactId>tracer</artifactId>
+			<artifactId>calculator</artifactId>
 			<version>1.0.0</version>
 		</dependency>
 
@@ -80,7 +80,7 @@
 						</goals>
 						<configuration>
 							<groupId>io.corp</groupId>
-							<artifactId>tracer</artifactId>
+							<artifactId>calculator</artifactId>
 							<version>1.0.0</version>
 							<packaging>jar</packaging>
 							<file>${basedir}/lib/tracer-1.0.0.jar</file>
