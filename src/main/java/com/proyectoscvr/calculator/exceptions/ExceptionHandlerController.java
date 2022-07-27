@@ -26,7 +26,7 @@ public class ExceptionHandlerController{
 			errorStringBuilder.append(error.getDefaultMessage());	
 		}
 		
-		if(errorStringBuilder.isEmpty()) errorStringBuilder.append(e.getMessage());
+		if(errorStringBuilder.length() == 0) errorStringBuilder.append(e.getMessage());
 		
 		ErrorDTO result = new ErrorDTO(LocalDateTime.now(), HttpStatus.BAD_REQUEST.value(), errorStringBuilder.toString(), request.getRequestURI());
 			
